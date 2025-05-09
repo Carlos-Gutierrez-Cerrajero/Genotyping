@@ -2,7 +2,7 @@
 
 ## Description
 <p id="Description">
-  Performs statistical analysis on a database of patient SNPs (<a href="https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism">Single Nucleotide Polymorphism</a>). This program compares between two groups (patient vs. control, or disease 1 vs. disease 2), performing Pearson's χ² test on a 3x2 or 2x2 contingency table of genotypes. In the case of 3x2 tables (when all three possible genotypes are present), it also calculates χ² and odds ratio for dominance (adding the heterozygote counts to either homozygote sequentially) and alleles (counting the number of alleles rather than genotypes).
+  Performs statistical analysis on a database of patient SNPs (<a href="https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism">Single Nucleotide Polymorphism</a>). This program compares between two groups (patient vs. control, or disease 1 vs. disease 2), performing Pearson's χ² test on a 3x2 or 2x2 contingency table of genotypes. In the case of 3x2 tables (when all three possible genotypes are present), it also calculates χ² and odds ratio for dominance (adding the heterozygote counts to both homozygotes sequentially) and alleles (counting the number of alleles rather than genotypes).
 </p>
 
 ## Dependencies
@@ -36,7 +36,6 @@
        <th>Condition 2</th>
      </tr>
    </tr></table>
-  There should be, at most, three unique values for each SNP (i.e. all combinations of a single SNP) and two unique values for groups (i.e. two conditions to compare between). 
-  This program takes a list of gene names (found in "./input", basically a newline-separated list of gene names) in <a href="https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29">grp format</a> and an optional <a href="https://www.ncbi.nlm.nih.gov/datasets/docs/v2/api/api-keys/">NCBI API key</a> (also in "./input", which you can generate in your NCBI account settings), and returns a tab-separated list of gene summaries (written to "./output", in the format "Gene\tSummary\n").<br>
-  WARNING: I've only tested this program in Windows, so the command line arguments might not work in other operating systems.
+  There should be, at most, three unique values for each SNP (i.e. all combinations of a single SNP) and two unique values for groups (i.e. two conditions to compare between). This means that the code only works with 2x2 and 3x2 contingency tables (bear in mind, that typos when writing the genotypes or groups will change the dimensionality).<br>
+  The code returns an excel file (written to ./output) with χ² (actual counts, expected counts, and p-value) and odds ratio (value, 95% confidence interval, and p-value) for 2x2 contingency tables. In the case of 3x2 contingency table, it returns χ² for the 3x2 genotype table and then calculates 2x2 contingency tables for dominance and alleles, returning χ² and odds ratio for those.
 </p>
