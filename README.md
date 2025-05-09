@@ -8,7 +8,7 @@
 ## Dependencies
 <p id="Dependencies">
   Language: Python 3<br>
-  Modules: <a href=https://pypi.org/project/openpyxl/>openpyxl</a>, <a href=>pandas</a>, <a href=>numpy</a>, <a href=>scipy</a>, and <a href=>statsmodels</a> (logging, sys, and os as well, but those are part of the standard library).<br>
+  Modules: <a href=https://pypi.org/project/openpyxl/>openpyxl</a>, <a href=https://pypi.org/project/pandas/>pandas</a>, <a href=https://pypi.org/project/numpy/>numpy</a>, <a href=https://pypi.org/project/scipy/>scipy</a>, and <a href=https://pypi.org/project/statsmodels/>statsmodels</a> (logging, sys, and os as well, but those are part of the standard library).<br>
   File: datsets.exe installed in the same folder as the python file. Download from the NCBI <a href="https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/download-and-install/">command-line tools page</a>. The one included here is Windows 64-bit, up-to-date as of 01/05/2025.
 </p>
 
